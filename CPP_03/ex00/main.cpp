@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/11/16 18:17:15 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/27 17:09:37 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+int	main()
 {
-	Zombie	*new_zombie;
+	ClapTrap	bob("Bob");
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
+    bob.attack("Joe Mama");
+    bob.takeDamage(3);
+    bob.beRepaired(3);
+	std::cout << std::endl;
+
+    bob.attack("Michael Wave");
+    bob.takeDamage(5);
+    bob.beRepaired(2);
+	std::cout << std::endl;
+
+    bob.attack("Tony Pizza");
+    bob.takeDamage(7);
+    bob.beRepaired(5);
+
+    return (0);
 }

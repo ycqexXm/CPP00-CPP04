@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/11/09 19:17:31 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/16 15:05:29 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+int	main(void)
 {
-	Zombie	*new_zombie;
+	Fixed	a;
+	Fixed	b(a);
+	Fixed	c;
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return (0);
 }

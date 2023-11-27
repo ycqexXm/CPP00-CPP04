@@ -6,7 +6,7 @@
 #    By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:53:36 by yorlians          #+#    #+#              #
-#    Updated: 2023/10/27 11:50:44 by yorlians         ###   ########.fr        #
+#    Updated: 2023/11/08 13:54:05 by yorlians         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,16 +33,16 @@ OKAYY_LETSGO	= \n[\033[32mOK\033[0m]
 
 %.o:			%.cpp
 				@echo "[..] $(PURPLE)*zombie sounds*$(RESET)... compiling $*.cpp\r\c"
-				@$(CC) $(MAIN_INC) -c $< -o $@
+				@$(CC) $(CFLAGS) $(MAIN_INC) -c $< -o $@
 				@echo "$(_CLEAR)"
 
 all:			$(NAME)
 				@printf "\n"
-				@printf "$(PURPLE)            ___ ___        ___    _____    _     _   \n$(RESET)"
-				@printf "$(PURPLE) ___ _ _   |   |   |   ___|  _|  |    _| _| |_ _| |_ \n$(RESET)"
-				@printf "$(PURPLE)| -_|_'_|  | | | | |  | . |  _|  |   |_ |_   _|_   _|\n$(RESET)"
-				@printf "$(PURPLE)|___|_,_|  |___|___|  |___|_|    |_____|  |_|   |_|  \n$(RESET)"
-				@printf "$(PURPLE)                                                     \n$(RESET)"
+				@printf "$(PURPLE)  _____    _     _       ___ ___     \n$(RESET)"
+				@printf "$(PURPLE) |    _| _| |_ _| |_    |   |_  |     \n$(RESET)"
+				@printf "$(PURPLE) |   |_ |_   _|_   _|   | | |_| |_     \n$(RESET)"
+				@printf "$(PURPLE) |_____|  |_|   |_|     |___|_____|     \n$(RESET)"
+				@printf "$(PURPLE)                                        \n$(RESET)"
 				@printf "\n"
 
 $(NAME):		$(OBJS) $(INCS)

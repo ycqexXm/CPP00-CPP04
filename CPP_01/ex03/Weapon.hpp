@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/10/30 18:02:27 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/08 14:09:05 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+#include <iostream>
+#include <string>
+
+/*Represent a weapon with a type*/
+class Weapon
 {
-	Zombie	*new_zombie;
+	private:
+			std::string	type;
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
-}
+	public:
+			/*Public methods to get and set the type*/
+			const std::string &getType() const;
+			void setType(const std::string newType);
+			Weapon(const std::string type);
+};
+
+#endif

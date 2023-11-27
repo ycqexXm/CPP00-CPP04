@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/11/16 18:18:30 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/27 16:57:25 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	Zombie	*new_zombie;
+	public:
+		//Constructors
+		ScavTrap(const std::string &name);
+		ScavTrap(const ScavTrap &copy);
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
-}
+		//Destructor
+		~ScavTrap();
+
+		//Public methods
+		void	attack(const std::string &target);
+		void	guardGate();
+};
+
+#endif

@@ -5,23 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:34 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:46 by yorlians         ###   ########.fr       */
+/*   Created: 2023/11/16 18:17:15 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/27 14:25:30 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main(void)
+int	main()
 {
-	Zombie	*new_zombie;
-	/*create zombie on the heap*/
-	new_zombie = newZombie("Silent Joe");
-	/*announce zombie*/
-	new_zombie -> announce();
-	/*delete zombie from the heap*/
-	delete new_zombie;
-	/*create temporary zombie on the stack*/
-	randomChump("Bob");
+	ScavTrap	kevin("Kevin");
+
+	kevin.attack("Joe Mama");
+	kevin.takeDamage(30);
+	kevin.beRepaired(3);
+	kevin.guardGate();
+	std::cout << std::endl;
+
+    kevin.attack("Tony Pizza");
+    kevin.takeDamage(500);
+    kevin.beRepaired(2);
+    kevin.guardGate();
+	std::cout << std::endl;
+
+    kevin.attack("Michael Wave");
+    kevin.takeDamage(7);
+    kevin.beRepaired(5);
+    kevin.guardGate();
+
 	return (0);
 }

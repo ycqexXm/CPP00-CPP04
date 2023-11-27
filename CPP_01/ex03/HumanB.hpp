@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/10/30 18:02:04 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/08 14:15:13 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+#include <string>
+#include "Weapon.hpp"
+#include <iostream>
+
+/*Represent a human with a name and a weapon*/
+class HumanB
 {
-	Zombie	*new_zombie;
+	private:
+			std::string	name;
+			Weapon 		*weapon;
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
-}
+	public:
+			/*Public methods to set the weapon and attack*/
+			HumanB(const std::string name);
+			void	attack();
+			void	setWeapon(Weapon &WP);
+};
+
+#endif

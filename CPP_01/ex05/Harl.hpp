@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:30 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:23 by yorlians         ###   ########.fr       */
+/*   Created: 2023/10/30 19:47:03 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/08 15:22:39 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-/*Create a zombie on the heap and return it*/
-Zombie	*newZombie(std::string name)
+#include <string>
+#include <iostream>
+
+class	Harl
 {
-	Zombie	*new_zombie;
+	private:
+			void	debug();
+			void	info();
+			void	warning();
+			void	error();
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
-}
+	public:
+			/*Public method used to call one of the
+			private methods based on the argument
+			that it receives*/
+			void	complain(std::string level);
+};
+
+/**/
+typedef	void (Harl::*MemberFunction)() const;
+
+#endif

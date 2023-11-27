@@ -5,23 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/26 19:31:25 by yorlians          #+#    #+#              #
-#    Updated: 2023/11/08 13:54:13 by yorlians         ###   ########.fr        #
+#    Created: 2023/10/27 17:42:25 by yorlians          #+#    #+#              #
+#    Updated: 2023/11/08 13:53:56 by yorlians         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= ./MoarBrainz
+NAME			= HiThisIsBrain
 
 CC				= c++
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-INCS_DIR		= .
-MAIN_INC		= -I$(INCS_DIR)
-INCS			= $(shell find $(INCS_DIR) -type f -name "*.hpp")
-
-SRCS_DIR 		= .
-SRCS			= $(shell find $(SRCS_DIR) -type f -name "*.cpp")
+SRCS			= $(shell find . -type f -name "*.cpp")
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -32,8 +27,8 @@ _CLEAR			= \033[0K\r\c
 OKAYY_LETSGO	= \n[\033[32mOK\033[0m]
 
 %.o:			%.cpp
-				@echo "[..] $(PURPLE)*zombie horde sounds*$(RESET)... compiling $*.cpp\r\c"
-				@$(CC) $(CFLAGS) $(MAIN_INC) -c $< -o $@
+				@echo "[..] $(PURPLE)*white noise*$(RESET)... compiling $*.cpp\r\c"
+				@$(CC) $(CFLAGS) -c $< -o $@
 				@echo "$(_CLEAR)"
 
 all:			$(NAME)
@@ -45,9 +40,9 @@ all:			$(NAME)
 				@printf "$(PURPLE)                                        \n$(RESET)"
 				@printf "\n"
 
-$(NAME):		$(OBJS) $(INCS)
-				@$(CC) $(CFLAGS) $(OBJS) $(MAIN_INC) -o $(NAME)
-				@echo "$(OKAYY_LETSGO) $(PURPLE)*zombie horde sounds*$(RESET) $(BLUE)compiled$(RESET)"
+$(NAME):		$(OBJS)
+				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+				@echo "$(OKAYY_LETSGO) $(PURPLE)*white noise*$(RESET) $(BLUE)compiled$(RESET)"
 
 clean:
 				@$(RM) $(OBJS)

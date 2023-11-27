@@ -5,23 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 18:53:34 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/08 14:03:46 by yorlians         ###   ########.fr       */
+/*   Created: 2023/11/16 18:17:15 by yorlians          #+#    #+#             */
+/*   Updated: 2023/11/27 16:52:34 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int	main(void)
+int	main()
 {
-	Zombie	*new_zombie;
-	/*create zombie on the heap*/
-	new_zombie = newZombie("Silent Joe");
-	/*announce zombie*/
-	new_zombie -> announce();
-	/*delete zombie from the heap*/
-	delete new_zombie;
-	/*create temporary zombie on the stack*/
-	randomChump("Bob");
+	FragTrap	bob("Bob");
+
+	bob.attack("Joe Mama");
+	bob.takeDamage(5);
+	bob.beRepaired(5);
+	bob.highFivesGuys();
+	std::cout << std::endl;
+	
+    bob.attack("Michael Wave");
+    bob.takeDamage(30);
+    bob.beRepaired(0);
+    bob.highFivesGuys();
+	std::cout << std::endl;
+
+    bob.attack("Tonny Pizza");
+    bob.takeDamage(100);
+    bob.beRepaired(7);
+    bob.highFivesGuys();
 	return (0);
 }
