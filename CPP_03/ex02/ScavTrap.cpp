@@ -6,7 +6,7 @@
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:18:33 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/27 17:35:48 by yorlians         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:30:54 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,17 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
 	HitPoints = copy.HitPoints;
 	EnergyPoints = copy.EnergyPoints;
 	AttackDamage = copy.AttackDamage;
+}
+
+/*Overload of the assignment operator. It assigns the values of an existing
+ScavTrap to another*/
+ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
+{
+	Name = copy.Name;
+	HitPoints = copy.HitPoints;
+	EnergyPoints = copy.EnergyPoints;
+	AttackDamage = copy.AttackDamage;
+	return (*this);
 }
 
 /*Print message indicating that ScavTrap is now in Gate keeper mode*/

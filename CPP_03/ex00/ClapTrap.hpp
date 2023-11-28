@@ -6,7 +6,7 @@
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:17:37 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/27 17:03:54 by yorlians         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:24 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class ClapTrap
 
 		//Destructor
 		~ClapTrap();
+
+		//Overload of the assignment operator
+		ClapTrap &operator=(const ClapTrap &copy);
 
 		//Public methods
 		void	attack(const std::string &target);

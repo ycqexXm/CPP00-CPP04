@@ -6,7 +6,7 @@
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:19:18 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/27 17:38:48 by yorlians         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:12 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,17 @@ FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 	HitPoints = copy.HitPoints;
 	EnergyPoints = copy.EnergyPoints;
 	AttackDamage = copy.AttackDamage;
+}
+
+/*Overload of the assignment operator. It assigns the values of an existing
+FragTrap to another*/
+FragTrap &FragTrap::operator=(const FragTrap &copy)
+{
+	Name = copy.Name;
+	HitPoints = copy.HitPoints;
+	EnergyPoints = copy.EnergyPoints;
+	AttackDamage = copy.AttackDamage;
+	return (*this);
 }
 
 /*Print message indicating that FragTrap wants a high five*/

@@ -6,7 +6,7 @@
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:19:10 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/27 16:56:44 by yorlians         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:54 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class FragTrap : public ClapTrap
 
 		//Destructor
 		~FragTrap();
+
+		//Overload of the assignment operator
+		FragTrap &operator=(const FragTrap &copy);
 
 		//Public methods
 		void	highFivesGuys(void);

@@ -6,7 +6,7 @@
 /*   By: yorlians <yorlians@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:17:49 by yorlians          #+#    #+#             */
-/*   Updated: 2023/11/27 17:43:01 by yorlians         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:29:50 by yorlians         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,24 @@ ClapTrap::ClapTrap(const std::string name)
 
 /*Copy constructor that creates a new ClapTrap as a copy of
 an existing one*/
-ClapTrap::ClapTrap(const ClapTrap &copy) : Name(copy.Name), HitPoints(copy.HitPoints), EnergyPoints(copy.EnergyPoints), AttackDamage(copy.AttackDamage) { }
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	Name = copy.Name;
+	HitPoints = copy.HitPoints;
+	EnergyPoints = copy.EnergyPoints;
+	AttackDamage = copy.AttackDamage;
+}
+
+/*Overload of the assignment operator. It assigns the values of an existing
+ClapTrap to another*/
+ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
+{
+	Name = copy.Name;
+	HitPoints = copy.HitPoints;
+	EnergyPoints = copy.EnergyPoints;
+	AttackDamage = copy.AttackDamage;
+	return (*this);
+}
 
 /*Attack by the ClapTrap on a given target.
 Decrease EnergyPoints by 1 after each attack*/
